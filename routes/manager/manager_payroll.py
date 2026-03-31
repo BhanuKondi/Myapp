@@ -484,9 +484,9 @@ def download_payslip():
         "net_pay": net_pay,
         "amount_in_words": number_to_words(net_pay),
 
-        "basic": round((salary.basic_percent * 100) / 12, 2),
-        "hra": round((salary.hra_percent * 100) / 12, 2),
-        "fixed_allowance": round((salary.fixed_allowance * 100) / 12, 2),
+        "basic": round(((salary.basic_percent / 100) * salary.gross_salary) / 12, 2),
+        "hra": round(((salary.hra_percent / 100) * salary.gross_salary) / 12, 2),
+        "fixed_allowance":round(((salary.fixed_allowance / 100) * salary.gross_salary) / 12, 2),
     }
 
     # -------------------------------
