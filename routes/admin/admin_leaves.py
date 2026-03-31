@@ -108,10 +108,17 @@ def leave_summary():
     employees = Employee.query.all()
     summary = []
 
-    current_year = datetime.now().year
-    current_month = datetime.now().month
+    today = datetime.now()
+    current_year = today.year
+    current_month = today.month
 
-    TOTAL_CL = (current_month-1) * 0.5   # 🔥 Dynamic CL
+    # Financial year starts in March
+    if current_month >= 3:
+        months_passed = current_month - 2   # March = 1
+    else:
+        months_passed = current_month + 10  # Jan=11, Feb=12
+
+    TOTAL_CL = round(months_passed * 0.5, 2)  # 🔥 Dynamic CL
     TOTAL_SL = 6
 
     for e in employees:
