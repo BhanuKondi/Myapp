@@ -87,7 +87,7 @@
         <table class="table table-bordered mt-3">
             <thead>
                 <tr>
-                        <th>S.No</th>
+                    <th>Emp Code</th>
                     <th>Employee</th>
                     <th>Total CL</th> 
                     <th>CL Consumed</th>
@@ -201,8 +201,8 @@ function loadSummary() {
             } else {
                 data.forEach((e, i) => {
                     html += `<tr>
-                        <td>${i + 1}</td>
-                        <td>${e.name} (${e.emp_code})</td>
+                        <td>${e.emp_code}</td>
+                        <td>${e.name} </td>
 
                         <td>${e.total_casual}</td>
                         <td>${e.casual_consumed}</td>
