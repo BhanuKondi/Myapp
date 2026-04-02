@@ -463,7 +463,7 @@ def approve_payrun():
     db.session.commit()
 
     flash("Payroll approved!", "success")
-    return redirect(url_for("admin_payroll.view_payrun", pay_month=f"{year}-{month:02d}"))
+    return redirect(url_for("admin_payroll.payroll_dashboard", pay_month=f"{year}-{month:02d}"))
 
 
 # ======================================================
